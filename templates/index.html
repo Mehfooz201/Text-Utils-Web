@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Home</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">Analyze</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/analyze">Analyze</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Social link
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="https://www.facebook.com/mehfooz.shayan2">Facebook</a></li>
+                  <li><a class="dropdown-item" href="https://www.instagram.com/mehfooz.shayan201/">Instagram</a></li>
+                  <li><a class="dropdown-item" href="https://www.linkedin.com/in/mehfooz-ali-0928a01b0/">Linkedin</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+
+    <div class="container m-5">
+
+    <h1>Text Utils Website</h1>
+    <hr>
+    <h2>Welcome to the Text Analyzer, enter the text below</h2>
+     
+
+  <form action="/analyze" method='post'> 
+  {% csrf_token %}
+     
+    <div class="mb-3 form-group">
+      <label for="exampleFormControlTextarea1" class="form-label">Enter your text here</label>
+      <textarea class="form-control"  name="textarea" id="text" cols="150" rows="10"></textarea>
+    
+      <br>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" name="removepunc" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" name="fullcap" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">UPPERCASE</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" name="removenewline" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Remove New Line</label>
+      </div>
+
+      
+        {% comment %} <input type="checkbox" name="removepunc" id=""> Remove Punctuations {% endcomment %}
+        {% comment %} <input type="checkbox" name="fullcap" id=""> UPPERCASE {% endcomment %}
+        {% comment %} <input type="checkbox" name="removenewline" id=""> Remove New Line {% endcomment %}
+       
+      <button type="submit" class="btn btn-primary mt-2">Analyze Text</button>
+      
+    </div>
+           
+  </form>
+
+    </div>
+    
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>
